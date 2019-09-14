@@ -34,12 +34,13 @@ llvm_map_components_to_libnames(llvm_libs
 
 ADD_EXECUTABLE(main main.cpp ${ADD_SOURCE} ${ADD_HEADERS})
 TARGET_LINK_LIBRARIES(main
-    ${llvm_libs}
     clangBasic
     clangCodeGen
     clangDriver
     clangFrontend
-    clangSerialization)
+    clangSerialization
+    LLVM
+)
 
 SET(${CXX_STANDARD_REQUIRED} ON)
 SET_PROPERTY(TARGET main PROPERTY CXX_STANDARD 11)
